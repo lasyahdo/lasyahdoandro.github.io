@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Pemutar Musik</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        #myAudio {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #volumeControl {
+            width: 150px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dengerin Ya sayang Musiknya</h2>
+    <audio id="myAudio" src="andro.mp4"></audio>
+    <div class="controls">
+        <button onclick="playMusic()">Putar</button>
+        <button onclick="pauseMusic()">Hentikan</button>
+        <span>Volume:</span>
+        <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="changeVolume()">
+    </div>
+
+    <script>
+        var audio = document.getElementById("myAudio");
+        var volumeControl = document.getElementById("volumeControl");
+
+        function playMusic() {
+            audio.play();
+        }
+
+        function pauseMusic() {
+            audio.pause();
+        }
+
+        function changeVolume() {
+            audio.volume = volumeControl.value;
+        }
+    </script>
+    <br>
+    <hr>
+    <button>
+        <a href="foto.html">Selanjutnya</a>
+    </button><br><hr>
+    <button>
+     <a href="index.html">&larr; Kembali</a>
+    </button>
+    
+</body>
+</html>
